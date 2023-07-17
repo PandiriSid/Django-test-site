@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}    
+    <title> This is a sample test website </title>
+    
+    <div>
+        <center> <h2> You can add the Faculty details in this web-page.</h2></center>
+    </div>
+
+    <form method='post' action='submit_details' class="form-container">
+        {% csrf_token %}
+        <br> <br>
+        <div class="form-group">
+            <label for='fist_name' >First Name:</label>&nbsp;
+            <input type="text" id='first_name' name="first_name" placeholder="Enter the First_Name"  required>
+        </div>
+        <br> <br>
+        <div class="form-group">
+            <label for='last_name' >Last Name:</label>&nbsp;
+            <input type="text" id="last_name" name="last_name" placeholder="Enter the Last_Name" required>
+        </div>
+        <br> <br>
+        <div class="form-group">
+            <label for="age" >Age:</label>&nbsp;
+            <input type="number" id="age" name="age" placeholder="Enter your Age" >
+        </div>
+        <br> <br>
+        <div class="form-group">
+            <input type="radio" name="gender" value="male" > Male
+            <input type="radio" name="gender" value="Female" > Female
+        </div>
+        <br> <br>
+        <div>
+            <select id="birth_place" name="birth_place" >
+                <option disabled="true" selected>--- Select your birth place ---</option>
+                <option value="usa">USA</option>
+                <option value="India">India</option>
+                <option value="Europe">Europe</option>
+                <option value="Asia">Asia</option>
+                <option value="South America">South America</option>
+                <option value="Africa">Africa</option>
+            </select>
+        </div>
+        <br> <br>
+        <div>
+            <input type="checkbox" name="department" value="R&D" > R&D
+            <input type="checkbox" name="department" value="Academics" > Academics
+        </div>
+        <br> <br>
+        <div>
+            <input type="submit" value="Insert in the DB">
+        </div>
+    </form>
+
+    
+    
+
+{% endblock %}

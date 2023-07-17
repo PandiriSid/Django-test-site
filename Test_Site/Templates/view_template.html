@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block content %}  
+    <head>
+        <div> 
+            <h1> This is a page to view of all the DB records. </h1>
+
+        </div>
+        <div><div>
+        <style>
+            .cell-content {
+                padding: 10px;  /* Adjust padding as needed */
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#submitBtn').click(function(e) {
+                    e.preventDefault();
+                    $('.table-headings').toggleClass('hidden');
+                });
+            });
+        </script>
+    </head>
+    
+    <form method='post' action='view_faculty'>
+        {%csrf_token%}
+
+        <div> Enter the first name of the faculties would you like to extract:
+        <div> <input type="text" placeholder="Enter the first name" name="first_name">
+        <input type='submit' value="Get this Faculty Details" name="submit_button1">
+    </form>
+
+    <div> <div>
+
+    <table>
+        <thead class="table-headings hidden">
+            <tr>
+                <th><div class="cell-content">First Name</div></th>
+                <th><div class="cell-content">Last Name</div></th>
+                <th><div class="cell-content">Age</div></th>
+                <th><div class="cell-content">Gender</div></th>
+                <th><div class="cell-content">Birth_Place</div></th>
+                <th><div class="cell-content">Department</div></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for detail in details1 %}
+            <tr>
+                <td><div class="cell-content">{{ detail.first_name }}</div></td>
+                <td><div class="cell-content">{{ detail.last_name }}</div></td>
+                <td><div class="cell-content">{{ detail.age}}</div></td>
+                <td><div class="cell-content">{{ detail.gender}}</div></td>
+                <td><div class="cell-content">{{detail.birth_place}}</div></td>
+                <td><div class="cell-content">{{detail.department}}</div></td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+
+
+    <form method='post' action='view_faculty'>
+        {%csrf_token%}
+            <input type='submit' value="Get all Faculties" name="submit_button2">
+    </form>
+
+    <div> <div>
+
+    <table>
+        <thead class="table-headings hidden">
+            <tr>
+                <th><div class="cell-content">First Name</div></th>
+                <th><div class="cell-content">Last Name</div></th>
+                <th><div class="cell-content">Age</div></th>
+                <th><div class="cell-content">Gender</div></th>
+                <th><div class="cell-content">Birth_Place</div></th>
+                <th><div class="cell-content">Department</div></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for detail in details2 %}
+            <tr>
+                <td><div class="cell-content">{{ detail.first_name }}</div></td>
+                <td><div class="cell-content">{{ detail.last_name }}</div></td>
+                <td><div class="cell-content">{{ detail.age}}</div></td>
+                <td><div class="cell-content">{{ detail.gender}}</div></td>
+                <td><div class="cell-content">{{detail.birth_place}}</div></td>
+                <td><div class="cell-content">{{detail.department}}</div></td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

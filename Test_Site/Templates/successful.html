@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}  
+{% load static %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}">
+</head>
+<br><br>
+<h1> Those details are inserted into the DB successfully</h1>
+<br><br>
+
+<form method="post" action="submitted">
+{%csrf_token%}
+    <div class="btn-container">
+        <input type="submit" value="Insert more" name="insert_more" class="button">
+        <input type="submit" value="Go to Home" name="go_to_home" class="button">
+    </div> 
+</form>
+
+{% endblock %}
