@@ -1,3 +1,5 @@
+The tools and technologies involved are  : Python, Django Framework, SQL server for the DB, Html, CSS, JS, Data: is all University Internal data saved in the DB
+
 Here is the Images of the webiste that I deployed:                   
 Once the filter is choosen and the category is entered, we can see all the faculty of this University who are doing their research in this domain.
 The front page and the filters to search for the faculty is shown and the results and data is hidden as part of the confidentiality of the client data.
